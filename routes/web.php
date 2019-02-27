@@ -11,6 +11,10 @@
 |
 */
 
+Route::group(['prefix' => 'backstage'],function () {
+    Route::get('user','Backstage\AccountController@index');
+});
+
 Route::get('/', function () {
     return view('welcome');
 });
