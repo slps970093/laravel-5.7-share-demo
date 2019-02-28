@@ -13,6 +13,11 @@
 
 Route::group(['prefix' => 'backstage'],function () {
     Route::get('user','Backstage\AccountController@index');
+    Route::get('user/append','Backstage\AccountController@create');
+    Route::post('user','Backstage\AccountController@append');
+    Route::get('user/modify/{id}','Backstage\AccountController@update');
+    Route::patch('user/{id}','Backstage\AccountController@modify');
+    Route::delete('user/{id}','Backstage\AccountController@remove');
 });
 
 Route::get('/', function () {

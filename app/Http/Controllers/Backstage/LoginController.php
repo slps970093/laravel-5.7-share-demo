@@ -18,6 +18,7 @@ class LoginController extends Controller
     }
 
     public function logout() {
-        ˊ
+
+
     }
 }

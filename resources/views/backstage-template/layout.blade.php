@@ -1,112 +1,91 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="tw">
+
 <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.ico">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 
-    <title> @yield('title') </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>@yield('title')</title>
 
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-
-    <!--  Light Bootstrap Table core CSS    -->
-    <link href="{{ URL::asset('paper-admin-template/assets/css/light-bootstrap-dashboard.css?v=1.4.0') }}" rel="stylesheet"/>
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-
-    <!-- Bootstrap core CSS     -->
-    <link href="{{ URL::asset('paper-admin-template/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
-    <!-- Animation library for notifications   -->
-    <link href="{{ URL::asset('paper-admin-template/assets/css/animate.min.css') }}" rel="stylesheet"/>
-
-    <!--  Paper Dashboard core CSS    -->
-    <link href="{{ URL::asset('paper-admin-template/assets/css/paper-dashboard.css') }}" rel="stylesheet"/>
+    <!-- Custom fonts for this template-->
+    <link href="{{ URL::asset('sb-admin-template/vendor/fontawesome-free/css/all.min.css') }}" rel="stylesheet" type="text/css">
 
 
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="{{ URL::asset('paper-admin-template/assets/css/demo.css') }}" rel="stylesheet" />
+    <!-- Custom styles for this template-->
+    <link href="{{ URL::asset('sb-admin-template/css/sb-admin.css') }}" rel="stylesheet">
 
+    <!-- Bootstrap core JavaScript-->
+    <script src="{{ URL::asset('sb-admin-template/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="{{ URL::asset('sb-admin-template/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
+    <!-- Core plugin JavaScript-->
+    <script src="{{ URL::asset('sb-admin-template/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
-    <!--  Fonts and icons     -->
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
-    <link href="{{ URL::asset('paper-admin-template/assets/css/themify-icons.css') }}" rel="stylesheet">
+    <!-- Page level plugin JavaScript-->
+    <script src="{{ URL::asset('sb-admin-template/vendor/chart.js/Chart.min.js') }}"></script>
 
+    <!-- Custom scripts for all pages-->
+    <script src="{{ URL::asset('sb-admin-template/js/sb-admin.min.js') }}"></script>
 
-    <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ URL::asset('css/bootstrap4-datatable/datatables.min.css') }}">
+    <script src="{{ URL::asset('js/bootstrap4-datatable/datatables.min.js') }}"></script>
 
-    <!--   Core JS Files   -->
-    <script src="{{ URL::asset('paper-admin-template/assets/js/jquery.min.js') }}" type="text/javascript"></script>
-    <script src="{{ URL::asset('paper-admin-template/assets/js/bootstrap.min.js') }}" type="text/javascript"></script>
-
-    <!--  Checkbox, Radio & Switch Plugins -->
-    <script src="{{ URL::asset('paper-admin-template/assets/js/bootstrap-checkbox-radio.js') }}"></script>
-
-    <!--  Charts Plugin -->
-    <script src="{{ URL::asset('paper-admin-template/assets/js/chartist.min.js') }}"></script>
-
-    <!--  Notifications Plugin    -->
-    <script src="{{ URL::asset('paper-admin-template/assets/js/bootstrap-notify.js') }}"></script>
-
-    <!--  Google Maps Plugin    -->
-
-    <!-- Paper Dashboard Core javascript and methods for Demo purpose -->
-    <script src="assets/js/paper-dashboard.js"></script>
-
-    <!-- Paper Dashboard DEMO methods, don't include it in your project! -->
-    <script src="assets/js/demo.js"></script>
-
-
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
-<body>
 
-<div class="wrapper">
-    <div class="sidebar" data-color="purple" data-image="assets/img/sidebar-5.jpg">
+<body id="page-top">
 
-        <!--
-            Tip 1: you can change the color of the sidebar using: data-color="blue | azure | green | orange | red | purple"
-            Tip 2: you can also add an image using data-image tag
-        -->
+@include('backstage-template.nav')
 
-        <!-- left sidebar -->
-        @include('backstage-template.left-sidebar')
-    </div>
+<div id="wrapper">
 
-    <div class="main-panel">
-        @include('backstage-template.nav')
+    <!-- Sidebar -->
+    @include('backstage-template.left-sidebar')
 
-        <!-- content -->
-        <div class="content">
-            <div class="container-fluid">
-                @yield('content')
-            </div>
+    <div id="content-wrapper">
+        <div class="container-fluid">
+            @yield('content')
         </div>
+        <!-- /.container-fluid -->
 
-        <!-- footer -->
+        <!-- Sticky Footer -->
         @include('backstage-template.footer')
 
+    </div>
+    <!-- /.content-wrapper -->
 
+</div>
+<!-- /#wrapper -->
+
+<!-- Scroll to Top Button-->
+<a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+</a>
+
+<!-- Logout Modal-->
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                </button>
+            </div>
+            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-primary" href="login.html">Logout</a>
+            </div>
+        </div>
     </div>
 </div>
 
 
+
 </body>
-
-
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        demo.initChartist();
-        $.notify({
-            icon: 'pe-7s-gift',
-            message: "Welcome to <b>Light Bootstrap Dashboard</b> - a beautiful freebie for every web developer."
-        },{
-            type: 'info',
-            timer: 4000
-        });
-    });
-</script>
 
 </html>
