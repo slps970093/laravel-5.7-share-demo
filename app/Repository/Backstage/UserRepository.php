@@ -9,7 +9,7 @@
 namespace App\Repository\Backstage;
 
 
-use App\Model\Backstage\User;
+use App\Models\Backstage\User;
 use Illuminate\Support\Facades\Hash;
 
 class UserRepository

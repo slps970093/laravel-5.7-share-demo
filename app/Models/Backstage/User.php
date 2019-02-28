@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Model\Backstage;
+namespace App\Models\Backstage;
 
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;

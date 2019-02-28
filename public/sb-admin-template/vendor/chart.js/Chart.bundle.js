@@ -7410,7 +7410,7 @@ module.exports = function(Chart) {
 				line._datasetIndex = me.index;
 				// Data
 				line._children = points;
-				// Model
+				// Models
 				line._model = {
 					// Appearance
 					// The default behavior of lines is to break at null values, according
@@ -7998,7 +7998,7 @@ module.exports = function(Chart) {
 				// Data
 				_children: points,
 				_loop: true,
-				// Model
+				// Models
 				_model: {
 					// Appearance
 					tension: custom.tension ? custom.tension : helpers.valueOrDefault(dataset.lineTension, lineElementOptions.tension),

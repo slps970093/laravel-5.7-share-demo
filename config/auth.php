@@ -41,6 +41,11 @@ return [
             'provider' => 'users',
         ],
 
+        'backstage' => [
+            'driver' => 'session',
+            'provider' => 'backstage',
+        ],
+
         'api' => [
             'driver' => 'token',
             'provider' => 'users',
@@ -68,6 +73,11 @@ return [
         'users' => [
             'driver' => 'eloquent',
             'model' => App\User::class,
+        ],
+
+        'backstage' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Backstage\User::class,
         ],
 
         // 'users' => [

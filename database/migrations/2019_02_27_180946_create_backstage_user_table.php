@@ -19,6 +19,7 @@ class CreateBackstageUserTable extends Migration
             $table->string('password');
             $table->string('email');
             $table->string('name');
+            $table->rememberToken();
             $table->timestamps();
         });
     }
